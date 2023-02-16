@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sidebar_options {
+        @apply w-[46px] h-[46px] flex items-center justify-center mt-3 bg-[#36393f] text-[#398053] text-xl cursor-pointer rounded-3xl hover:rounded-[18px] transition-all duration-150 ease-linear hover:bg-[#3ba55d] hover:text-white
+    }
+
+    .auth-selector {
+        @apply w-full h-full px-3 outline-none rounded-md appearance-none bg-[#282424]
+    }
+
+    .nav_btn {
+        @apply text-[#a89e95] mx-2 px-[10px] py-[2px] text-[16px] hover:bg-lightGray hover:text-white rounded-[6px]
+    }
+}

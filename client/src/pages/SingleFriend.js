@@ -1,14 +1,16 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import FriendChat from '../components/FriendChat';
-import { GroupModalContext } from "../features/GroupModalContext";
+import { ModalContext } from "../context/ModalContext";
 import Sidebar from '../components/Sidebar';
 import UserList from '../components/UserList';
 import AuthFetch from "../hooks/AuthFetch";
+import BlockModal from "../components/BlockModal";
+import InviteGroupModal from "../components/InviteGroupModal";
 
 function SingleFriend() {
   const { user } = AuthFetch();
-  const { open, GroupModalDispatch } = useContext(GroupModalContext);
+  const { GroupOpen, BlockOpen, ModalDispatch } = useContext(ModalContext);
 
   const navigate = useNavigate();
 
@@ -17,7 +19,10 @@ function SingleFriend() {
   }, [user]);
 
   return (
-    <div onClick={open ? () => GroupModalDispatch({ type: "CLOSE" }) : null} className="flex">
+    <div onClick={GroupOpen ? () => ModalDispatch({ type: "GROUP_CLOSE" }) : null} className="flex">
+      <BlockModal />
+      <InviteGroupModal />
+      
       <Sidebar /> 
       <UserList />
       

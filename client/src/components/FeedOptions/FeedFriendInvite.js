@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import AuthFetch from '../../hooks/AuthFetch';
 import { useNavigate } from 'react-router-dom';
-import { SocketContext } from '../../features/SocketContext';
+import { SocketContext } from '../../context/SocketContext';
 
 function FeedFriendInvite() {
   const { user } = AuthFetch();

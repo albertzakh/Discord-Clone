@@ -6,15 +6,15 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        'almost': 'calc(100vh - 41px)',
+        'almost': 'calc(100vh - 53px)',
         'chat': 'calc(100vh - 130px)',
       }
     },
     screens: {
-        "mobile": "320px",
-        "ipad": "481px",
-        'tablet': "640px",
-        "medium": "800px",
+        "mobile": "640px",
+        "ipad": "768px",
+        'tablet': "1024px",
+        "medium": "1280px",
         "laptop": "1024px",
         "desktop": "1280px",
     },
@@ -23,7 +23,7 @@ module.exports = {
       "sidebar_logo": "#5865f2",
       "white": "white",
       "red": "red",
-      "feed": "#36393f",
+      "feed": "#313338",
       "gray": "#7e8185",
       "defaultText": "hsl(214, calc(var(--saturation-factor, 1) * 4%), 65.3%)",
       "lightGray": "#454950",

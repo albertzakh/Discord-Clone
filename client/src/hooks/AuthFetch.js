@@ -1,10 +1,8 @@
 import { useEffect, useContext } from 'react'
-import { SocketContext } from '../features/SocketContext';
-import { UserContext } from '../features/UserContext'
+import { UserContext } from '../context/UserContext'
 
 function AuthFetch() {
   const { user, authDispatch } = useContext(UserContext);
-  const { socket, socketDispatch } = useContext(SocketContext);
 
   useEffect(() => {
     let effectCleanup = true;
@@ -13,8 +11,7 @@ function AuthFetch() {
       if(effectCleanup) {
         const res = await fetch('/api/auth/current-user');
         const data = await res.json();
-  
-        if(!res.ok) {
+        if(!res.ok) {   
           authDispatch({ type: "LOGOUT" });
         }
         else {

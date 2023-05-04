@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { UserContext } from "../features/UserContext";
+import { UserContext } from "../context/UserContext";
 import AuthFetch from "../hooks/AuthFetch";
 
 function Register() {
@@ -17,7 +17,6 @@ function Register() {
     
     const [error, setError] = useState("");
     const navigate = useNavigate();
-
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -48,7 +47,7 @@ function Register() {
   });
   
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-[url('img/auth.png')]">
+    <div className="w-screen h-screen flex items-center justify-center bg-cover bg-no-repeat bg-[url('img/auth.png')]">
         <div className="w-full h-full ipad:w-[450px] ipad:h-[515px] bg-[#36393f] rounded-md text-white flex flex-col items-center py-6">
             <h2 className="text-[21px] font-bold">Create an account</h2>
             {/* {error && <div className="text-red font-bold mt-2">{error}</div>} */}

@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import FeedFriend from './FeedFriend';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FriendsContext } from '../../features/FriendsContext';
+import { FriendsContext } from '../../context/FriendsContext';
 import AuthFetch from '../../hooks/AuthFetch';
 import { useNavigate } from 'react-router-dom';
 import PendingLogo from  "../../img/Offline.svg";

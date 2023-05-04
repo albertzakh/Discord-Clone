@@ -75,9 +75,7 @@ export const PendingAdd = async (req, res) => {
       const friend = await User.findOne({ username: username, userHash: userhash });
       if(!friend) return res.status(400).json({error: "User does not exist"});
       if(friend._id == req.session.user._id) return res.status(400).json({error: "This is you!"})
-  
-      console.log(user.username, friend.username);
-  
+    
       if(!friend.pendingFriends.includes(user._id)) {
         await friend.updateOne({$push: { pendingFriends: user._id }});
       } else if(friend.pendingFriends.includes(user._id)) return res.status(400).json({error: "Already sent request to this person"});

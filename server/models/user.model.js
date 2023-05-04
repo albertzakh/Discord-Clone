@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
     profilePic: {type:String, required:true, default:"https://ia803204.us.archive.org/4/items/discordprofilepictures/discordblue.png"},
     userHash: {type:String, required:true,},
     pendingFriends: {type: Array, required: true},
+    pendingGroups: {type: Array, required: true},
     blockedFriends: {type:Array, required:true},
     acceptedFriends: {type:Array, required:true},
     groups: {type:Array, required:true}

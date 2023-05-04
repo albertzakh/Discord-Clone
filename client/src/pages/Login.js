@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { SocketContext } from "../features/SocketContext";
-import { UserContext } from "../features/UserContext";
+import { SocketContext } from "../context/SocketContext";
+import { UserContext } from "../context/UserContext";
 import AuthFetch from "../hooks/AuthFetch";
 
 function Login() {
@@ -56,11 +56,11 @@ function Login() {
   }
 
   useEffect(() => {
-    if(error) setTimeout(() => setError(""), 2000)
-  }, [error])
+    if(error) setTimeout(() => setError(""), 2000);
+  }, [error]);
 
   return (
-    <div className="p-5 ipad:p-10 tablet:p-22 w-screen h-screen flex items-center justify-center bg-no-repeat bg-[url('img/auth.png')]">
+    <div className="p-5 ipad:p-10 tablet:p-22 w-screen h-screen flex items-center justify-center bg-no-repeat bg-[url('img/auth.png')] bg-cover">
         <div className="bg-[#36393f] w-[800px] h-[380px] rounded-md flex">
           <div className="w-full flex flex-row">
               <div className="w-[100%] medium:w-[55%] flex flex-col items-center">

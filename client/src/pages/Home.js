@@ -1,26 +1,30 @@
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useEffect, useContext } from 'react';
 import Feed from '../components/Feed';
 import Sidebar from '../components/Sidebar';
 import UserList from "../components/UserList";
 import Status from '../components/Status';
 import FeedHeader from '../components/FeedHeader';
 import { useNavigate } from "react-router-dom";
-import { GroupModalContext } from '../features/GroupModalContext';
+import { ModalContext } from '../context/ModalContext';
 import AuthFetch from '../hooks/AuthFetch';
-import { SocketContext } from '../features/SocketContext';
+import BlockModal from '../components/BlockModal';
+import InviteGroupModal from '../components/InviteGroupModal';
 
 function Home() {
   const { user } = AuthFetch();
-  const { open, GroupModalDispatch } = useContext(GroupModalContext);
+  const { GroupOpen, BlockOpen, InviteOpen, ModalDispatch } = useContext(ModalContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if(!user) navigate("/login");
-  }, [user]);
+  }, [user]); 
   
   return (
-    <div onClick={open ? () => GroupModalDispatch({ type: "CLOSE" }) : null} className="flex">
+    <div onClick={GroupOpen ? () => ModalDispatch({ type: "GROUP_CLOSE" }) : null} className="flex">
+      <BlockModal />
+      <InviteGroupModal />
+      
       <Sidebar /> 
       <UserList />
 

@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react'
-import { UserContext } from '../features/UserContext'
+import { UserContext } from '../context/UserContext'
 import { useNavigate } from 'react-router-dom';
 import AuthFetch from '../hooks/AuthFetch';
 
@@ -10,7 +10,7 @@ function Error() {
 
   useEffect(() => {
     if(!user) navigate("/login");
-  }, [user])
+  }, [user]);
   
   return (
     <div className="flex flex-col items-center justify-center h-screen">

@@ -139,7 +139,7 @@ export const GetCurrentUser = async (req, res) => {
         res.status(200).json({username, email, birthDay, birthYear, birthMonth, _id, profilePic, hash:userHash, pendingFriends, acceptedFriends, blockedFriends});
     }
     else {
-        res.status(400).json({user:null})
+        res.status(400).json(null)
     }
 }
 
